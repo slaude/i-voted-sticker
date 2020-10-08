@@ -3,17 +3,42 @@ body {
   /* background: linear-gradient(#eeeeee, #ffffff); */
 }
 
+h1 {
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  margin: 2rem;
+}
+
+h2, h3 {
+  font-size: 2rem;
+  line-height: 2rem;
+  margin: 1rem;
+}
+
 .App {
-  max-width: 800px;
+  max-width: 960px;
   margin: 0 auto;
   text-align: center;
 }
 
 .VoteButton {
+  background: rgb(14, 48, 93);
+  color: white;
+  margin: 13px 0;
   padding: 13px;
   width: 100%;
-  font-size: 4rem;
+  font-size: 3rem;
   cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.VoteButton:hover {
+  opacity: 0.8;
+}
+
+.VoteButton:active {
+  background: rgb(205, 30, 69);
 }
 
 fieldset {
@@ -24,15 +49,37 @@ fieldset {
 input, .ResetButton {
   font-size: 2rem;
   padding: 21px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+
+.ResetButton {
+  background: #ddd;
+  cursor: pointer;
+}
+
+.ResetButton:hover {
+  opacity: 0.8;
+}
+
+.ResetButton:active {
+  background: #aaa;
 }
 
 .ElectoralismAsATreat {
   margin: 8px 0;
 }
 
+.InputButtonWrapper {
+  display: flex;
+}
+
+.InputButtonWrapper input {
+  flex: 1
+}
+
 .StickerWrapper {
   margin: 150px 0;
-  text-align: right;
   font-family: 'Times New Roman', Cambria, Cochin, Georgia, Times, serif;
   color: rgb(14, 48, 93);
   transform: rotate(-6deg);
@@ -46,6 +93,7 @@ input, .ResetButton {
   border-radius: 800px / 350px;
   box-shadow: 5px 3px 13px #aaa;
   overflow: hidden;
+  margin: 0 auto;
 }
 
 .StarsAndStripes {
@@ -109,9 +157,9 @@ input, .ResetButton {
   position: absolute;
   /* border to help me figure out the text boundaries */
   /* border: 1px solid #000; */
-  bottom: 60px;
-  right: 100px;
-  width: 530px;
+  bottom: 70px;
+  right: 80px;
+  width: 550px;
   height: 128px;
   box-sizing: content-box;
   word-break: break-word;

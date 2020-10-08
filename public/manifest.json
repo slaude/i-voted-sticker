@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "I Voted Sticker",
+  "name": "Create Your own 'I voted' sticker",
   "icons": [
     {
       "src": "favicon.ico",

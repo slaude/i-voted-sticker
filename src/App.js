@@ -28,6 +28,7 @@ export default () => {
   const [locationSize, setLocationSize] = useState(DEFAULT_SIZES_REMS[0]);
   const lastSize = useRef(null);
 
+  const locationInputRef = useRef(null);
   const locationRef = useRef(null);
   const locationWrapperRef = useRef(null);
 
@@ -43,6 +44,12 @@ export default () => {
       setLocation( l => l ? l+" " : l);
     }
   }, [askIfYouVoted, locationRef, setLocation]);
+
+  useEffect(() => {
+    if (askIfYouVoted && locationInputRef.current) {
+        locationInputRef.current.focus();
+    }
+  }, [askIfYouVoted, locationInputRef])
 
   useEffect(() => {
     if(locationRef.current === null || locationWrapperRef.current === null) {
@@ -69,7 +76,7 @@ export default () => {
 
   return (
     <div className="App">
-      <h1>Create your own "I voted" sticker</h1>
+      <h1>Create your own "I Voted" sticker</h1>
       {askIfYouVoted ? (
         <>
           <div className="ElectoralismAsATreat">
@@ -85,10 +92,26 @@ export default () => {
           </div>
           <form onSubmit={(e) => { e.preventDefault() }}>
             <fieldset>
-              <div>
-                <label htmlFor="location"><h3>Where are you currently?</h3></label>
-                <input type="text" value={location} onChange={e => setLocation(e.target.value)} id="location" placeholder="your location" />
-                <button type="button" className="ResetButton" onClick={() => setLocation("")}>
+              <label htmlFor="location"><h3>Where are you currently?</h3></label>
+              <div class="InputButtonWrapper">
+                <input
+                  type="text"
+                  value={location}
+                  onChange={e => setLocation(e.target.value)}
+                  id="location"
+                  placeholder="your location"
+                  ref={locationInputRef}
+                />
+                <button
+                  type="button"
+                  className="ResetButton"
+                  onClick={() => {
+                    setLocation("");
+                    if (locationInputRef.current) {
+                      locationInputRef.current.focus();
+                    }
+                  }}
+                >
                   Reset
                 </button>
               </div>
