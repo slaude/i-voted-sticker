@@ -157,9 +157,9 @@ input, .ResetButton {
   position: absolute;
   /* border to help me figure out the text boundaries */
   /* border: 1px solid #000; */
-  bottom: 70px;
-  right: 80px;
-  width: 550px;
+  bottom: 60px;
+  right: 100px;
+  width: 530px;
   height: 128px;
   box-sizing: content-box;
   word-break: break-word;

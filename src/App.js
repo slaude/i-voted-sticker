@@ -92,8 +92,10 @@ export default () => {
           </div>
           <form onSubmit={(e) => { e.preventDefault() }}>
             <fieldset>
-              <label htmlFor="location"><h3>Where are you currently?</h3></label>
-              <div class="InputButtonWrapper">
+              <label htmlFor="location">
+                <h3>Where are you currently?</h3>
+              </label>
+              <div className="InputButtonWrapper">
                 <input
                   type="text"
                   value={location}
